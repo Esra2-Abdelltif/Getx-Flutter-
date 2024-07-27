@@ -7,11 +7,12 @@ GetX is an extra-light and powerful solution for Flutter. It combines high-perfo
 To install getx Package, follow these steps
 
 1. Add the package to your project's dependencies in the `pubspec.yaml` file:
+   
    ```yaml
    dependencies:
       get: ^4.6.6
     ``` 
-2. Run the following command to fetch the package:
+3. Run the following command to fetch the package:
     ``` 
     flutter pub get
     ``` 
