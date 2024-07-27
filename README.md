@@ -16,3 +16,9 @@ To install getx Package, follow these steps
     ``` 
     flutter pub get
     ``` 
+## Usage
+
+1. Add "Get" before your MaterialApp, turning it into GetMaterialApp:
+    ``` 
+   void main() => runApp(GetMaterialApp(home: Home()));
+    ```
