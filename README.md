@@ -1,16 +1,17 @@
-# getx
+# Getx Flutter Package
 
-A new Flutter project.
+GetX is an extra-light and powerful solution for Flutter. It combines high-performance state management, intelligent dependency injection, and route management quickly and practically.
 
-## Getting Started
+## Installation
 
-This project is a starting point for a Flutter application.
+To install getx Package, follow these steps
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Add the package to your project's dependencies in the `pubspec.yaml` file:
+   ```yaml
+   dependencies:
+      get: ^4.6.6
+    ``` 
+2. Run the following command to fetch the package:
+    ``` 
+    flutter pub get
+    ``` 
