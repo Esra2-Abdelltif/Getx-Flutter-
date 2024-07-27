@@ -19,6 +19,34 @@ To install getx Package, follow these steps
 ## Usage
 
 1. Add "Get" before your MaterialApp, turning it into GetMaterialApp:
-    ``` 
+   
+    ```
    void main() => runApp(GetMaterialApp(home: Home()));
+    ```
+## Route management 
+
+1. Navigate to a new screen::
+   
+    ```
+   Get.to(NextScreen());
+    ```   
+2. To go to the next screen and no option to go back to the previous screen (for use in SplashScreens, login screens, etc.):
+   
+    ```
+   Get.off(NextScreen());
+    ```
+3. To close snackbars, dialogs, bottomsheets, or anything you would normally close with Navigator.pop(context):
+   
+    ```
+   Get.back();
+    ```
+ 4. To go to the next screen and cancel all previous routes (useful in shopping carts, polls, and tests)
+   
+    ```
+    Get.offAll(NextScreen());
+    ```
+ 5. Navigate to new screen with name. See more details on named routes here
+
+    ```
+    Get.toNamed('/details');
     ```
