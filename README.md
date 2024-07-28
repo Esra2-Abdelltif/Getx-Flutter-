@@ -59,12 +59,13 @@ Get has two different state managers: the simple state manager (we'll call it Ge
  
     ```
    class GetBuilderCounterController extends GetxController {
-    int counter=0;
-    void increment(){
-     counter++;
-     update();
-    }
+     int counter=0;
+     void increment(){
+      counter++;
+      update();
+     }
    }
+    
     ```
     upate() is required to change state
       
@@ -75,7 +76,53 @@ Get has two different state managers: the simple state manager (we'll call it Ge
     init: GetBuilderCounterController() ,
     builder: (controller){
         return Text("${controller.counter}"));
-    }
+     }
     )
+
+    ```
+ ## 📍 Obx State management
+1. create ObxrController class extends GetxController:
+ 
+    ```
+   class ObxCounterController extends GetxController {
+     RxInt counter=0.obs;
+     void increment(){
+      counter++;
+     }
+   }
+    ```
+      
+3. And in the UI, when you want to show that value and update the screen whenever the values changes, simply do this:
+   
+    ```
+    final ObxCounterController controller =Get.put(GetXAndObxCounterController());
+
+    Obx(() => Text("${controller.counter.value}"));
+    
+    ```    
+   
+## 📍 GetX State management
+1. create GetXrController class extends GetxController:
+ 
+    ```
+   class GetXrController extends GetxController {
+     RxInt counter=0.obs;
+     void increment(){
+      counter++;
+     }
+   }
+    
+    ```
+     
+3. And in the UI, when you want to show that value and update the screen whenever the values changes, simply do this:
+   
+    ```
+   GetBuilder<GetXrController>(
+    init: GetXrController() ,
+    builder: (controller){
+        return Text("${controller.counter}"));
+     }
+    )
+
     ```
 
