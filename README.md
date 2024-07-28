@@ -48,7 +48,7 @@ To install getx Package, follow these steps
  5. Navigate to new screen with name. See more details on named routes here
 
     ```
-    Get.toNamed('/details');
+    Get.toNamed('/NextScreen');
     ```
 
 ## ⚡ State management 
