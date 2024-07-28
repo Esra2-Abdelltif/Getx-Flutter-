@@ -120,7 +120,7 @@ Get has two different state managers: the simple state manager (we'll call it Ge
    GetBuilder<GetXrController>(
     init: GetXrController() ,
     builder: (controller){
-        return Text("${controller.counter}"));
+        return Text("${controller.counter.value}"));
      }
     )
 
