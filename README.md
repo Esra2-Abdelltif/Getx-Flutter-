@@ -58,12 +58,12 @@ Get has two different state managers: the simple state manager (we'll call it Ge
 1. create GetBuilderrController class extends GetxController:
  
     ```
-   class GetBuilderCounterController extends GetxController{
-   int counter=0;
-   void increment(){
-    counter++;
-    update();
-   }
+   class GetBuilderCounterController extends GetxController {
+    int counter=0;
+    void increment(){
+     counter++;
+     update();
+    }
    }
     ```
     upate() is required to change state
@@ -72,9 +72,10 @@ Get has two different state managers: the simple state manager (we'll call it Ge
    
     ```
    GetBuilder<GetBuilderCounterController>(
-              init:GetBuilderCounterController() ,
-                builder: (controller){
-              return Text("${controller.counter}"));
-    })
+    init: GetBuilderCounterController() ,
+    builder: (controller){
+        return Text("${controller.counter}"));
+    }
+    )
     ```
 
