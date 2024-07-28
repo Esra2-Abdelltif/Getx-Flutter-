@@ -2,7 +2,7 @@
 
 GetX is an extra-light and powerful solution for Flutter. It combines high-performance state management, intelligent dependency injection, and route management quickly and practically.
 
-## Installation
+## ⚡ Installation
 
 To install getx Package, follow these steps
 
@@ -16,14 +16,14 @@ To install getx Package, follow these steps
     ``` 
     flutter pub get
     ``` 
-## Usage
+## ⚡ Usage
 
 1. Add "Get" before your MaterialApp, turning it into GetMaterialApp:
    
     ```
    void main() => runApp(GetMaterialApp(home: Home()));
     ```
-## Route management 
+## ⚡ Route management 
 
 1. Navigate to a new screen::
    
@@ -50,3 +50,31 @@ To install getx Package, follow these steps
     ```
     Get.toNamed('/details');
     ```
+
+## ⚡ State management 
+Get has two different state managers: the simple state manager (we'll call it GetBuilder) and the reactive state manager (GetX/Obx).
+
+## 📍 GetBuilder State management
+1. create GetBuilderrController class extends GetxController:
+ 
+    ```
+   class GetBuilderCounterController extends GetxController{
+   int counter=0;
+   void increment(){
+    counter++;
+    update();
+   }
+   }
+    ```
+    upate() is required to change state
+      
+3. And in the UI, when you want to show that value and update the screen whenever the values changes, simply do this:
+   
+    ```
+   GetBuilder<GetBuilderCounterController>(
+              init:GetBuilderCounterController() ,
+                builder: (controller){
+              return Text("${controller.counter}"));
+    })
+    ```
+
