@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:get/get.dart';
-import 'package:getx/view/screens/counter_screen/get_builder_counter_screen.dart';
-import 'package:getx/view/screens/counter_screen/get_x_counter_screen.dart';
 import 'package:getx/view/screens/counter_screen/obx_counter_screen.dart';
 import 'package:getx/view/screens/route_management/route_management.dart';
 
