@@ -196,5 +196,35 @@ class HomePage extends StatelessWidget {
 }
  ```
 
+## ⚡ Controller Life cycle
+when extende from GetxController the GetxController have method
+ ```
+import 'package:get/get.dart';
 
+class CountController extends GetxController {
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+  }
+  
+  @override
+  void onClose() {
+    // TODO: implement onClose
+    super.onClose();
+  }
+  @override
+  void onReady() {
+    // TODO: implement onReady
+    super.onReady();
+  }
+}
+ ```
+- Update(): Using this, widgets can listen to the changes made by the methods defined in controller. It is similar to notifyListeners in providers
+
+- onInit() : is equivalent the initState() in Stateful call when enter the page .
+
+- onReady() : is call when the build widget is finished .
+
+- onClose() : is equivalent the dispose() in Stateful.
 
