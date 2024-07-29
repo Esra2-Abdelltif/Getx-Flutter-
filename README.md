@@ -228,3 +228,23 @@ class CountController extends GetxController {
 
 - onClose() : is equivalent the dispose() in Stateful.
 
+## ⚡GetPage Middleware
+The GetPage has now new property that takes a list of GetMiddleWare and run them in the specific order.
+Note: When GetPage has a Middlewares, all the children of this page will have the same middlewares automatically.
+ ```
+class MiddlewareClass extends GetMiddleware{
+ 
+ // Priority 
+// The Order of the Middlewares to run can be set by the priority in the GetMiddleware.
+   @override
+  int? get priority => 1;
+
+//Redirect
+//This function will be called when the page of the called route is being searched for. It takes RouteSettings as a result to redirect to. Or give it null and there will be no redirecting.
+  bool myVar=false;
+  @override
+  RouteSettings? redirect(String? route) {
+    if(myVar == true) return const RouteSettings(name: "/route");
+
+  }
+}
