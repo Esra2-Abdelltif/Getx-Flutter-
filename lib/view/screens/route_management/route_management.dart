@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/controller/counter_controller/get_builder_counter_controller.dart';
+import 'package:getx/utils/my_bindings.dart';
+import 'package:getx/view/screens/counter_screen/get_builder_counter_screen.dart';
 import 'package:getx/view/widget/custom_button.dart';
 
 class RouteManagement extends StatelessWidget {
-  const RouteManagement({super.key});
+   RouteManagement({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,8 @@ class RouteManagement extends StatelessWidget {
                 // Get.toNamed("/NextScreen");
                 // Get.offNamed("/NextScreen");
                 // Get.offAllNamed("/NextScreen");
-                Get.to(const NextScreen());
+                ///To call Binding
+                Get.to( GetBuilderCounterScreen(),binding: MyBindings());
               },
             ),
 
@@ -88,7 +92,7 @@ class NextScreenTwo extends StatelessWidget {
               CustomButton(
                 text: "Next2Screen",
                 onTap: () {
-                  Get.offAll(const RouteManagement());
+                  Get.offAll( RouteManagement());
                 },
               ),
             ],),

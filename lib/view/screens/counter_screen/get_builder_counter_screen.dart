@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:getx/controller/counter_controller/get_builder_counter_controller.dart';
 
 class GetBuilderCounterScreen extends StatelessWidget {
-  const GetBuilderCounterScreen({super.key});
+   GetBuilderCounterScreen({super.key});
+   final GetBuilderCounterController controller = Get.put(GetBuilderCounterController());
+  // final GetBuilderCounterController controller =Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class GetBuilderCounterScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GetBuilder<GetBuilderCounterController>(
-              init:GetBuilderCounterController() ,
+              // init:GetBuilderCounterController() ,
                 builder: (controller){
               return  Row(
                 mainAxisAlignment: MainAxisAlignment.center,
