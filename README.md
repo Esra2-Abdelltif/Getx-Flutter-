@@ -52,9 +52,11 @@ To install getx Package, follow these steps
     ```
 
 ## ⚡ State management 
+
 Get has two different state managers: the simple state manager (we'll call it GetBuilder) and the reactive state manager (GetX/Obx).
 
 ## 📍 GetBuilder State management
+
 1. create GetBuilderrController class extends GetxController:
  
     ```
@@ -81,6 +83,7 @@ Get has two different state managers: the simple state manager (we'll call it Ge
 
     ```
  ## 📍 Obx State management
+ 
 1. create ObxrController class extends GetxController:
  
     ```
@@ -102,6 +105,7 @@ Get has two different state managers: the simple state manager (we'll call it Ge
     ```    
    
 ## 📍 GetX State management
+
 1. create GetXrController class extends GetxController:
  
     ```
@@ -125,4 +129,102 @@ Get has two different state managers: the simple state manager (we'll call it Ge
     )
 
     ```
+## ⚡ Dependency management 
+
+Get has a simple and powerful dependency manager that allows you to retrieve the same class as your Bloc or Controller with just 1 lines of code, no Provider context, no inheritedWidget:
+ ```
+Controller controller = Get.put(Controller()); // Rather Controller controller = Controller();
+ ```
+## ⚡ Bindings
+Bindings are classes where we can declare our dependencies and then ‘bind’ them to the routes. However, this means that we can only use it when using GetX for route management.
+
+1. start by creating a class that implements Bindings class.
+
+ ```
+ class HomeBinding implements Bindings {}
+ ```
+
+2. need to override the dependencies() method, where we’ll insert all our dependencies.
+
+ ```
+class HomeBinding implements Bindings {
+  @override
+  void dependencies() {
+    Get.put<Controller1>(Controller1());
+    Get.put<Controller2>(Controller2());
+  }
+}
+
+ ```
+
+3. we can ‘bind’ these dependencies to our routes.
+ ```
+ GetMaterialApp( // remember this?
+  initialRoute: "/",
+  getPages: [
+    GetPage(name: "/", page: () => HomePage(), binding: HomeBinding()), // here!
+  ],
+ );
+ 
+ Get.to(HomePage(), binding: HomeBinding()); // or like this!
+ Get.toNamed("/", binding: HomeBinding()); // and this!
+ ```
+We can also set a Binding to create the dependencies as soon as the app starts, by declaring it as initialBinding.
+ ```
+GetMaterialApp(
+  initialRoute: "/",
+  initialBinding: HomeBinding(), // here!
+);
+```
+
+GetX also provides BindingsBuilder that lets us use bindings without creating a separate class.
+ ```
+GetMaterialApp(
+  initialRoute: "/",
+  initialBinding: BindingsBuilder(() { // like this!
+    Get.put(Controller());
+  }),
+);
+ ```
+
+4. to use access the dependencies, we can simply use Get.find.
+ ```
+class HomePage extends StatelessWidget {
+
+  Controller controller = Get.find(); // it'll work!
+
+}
+ ```
+
+## ⚡ Controller Life cycle
+when extende from GetxController the GetxController have method
+ ```
+import 'package:get/get.dart';
+
+class CountController extends GetxController {
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+  }
+  
+  @override
+  void onClose() {
+    // TODO: implement onClose
+    super.onClose();
+  }
+  @override
+  void onReady() {
+    // TODO: implement onReady
+    super.onReady();
+  }
+}
+ ```
+- Update(): Using this, widgets can listen to the changes made by the methods defined in controller. It is similar to notifyListeners in providers
+
+- onInit() : is equivalent the initState() in Stateful call when enter the page .
+
+- onReady() : is call when the build widget is finished .
+
+- onClose() : is equivalent the dispose() in Stateful.
 
