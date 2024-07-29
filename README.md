@@ -135,7 +135,7 @@ Get has a simple and powerful dependency manager that allows you to retrieve the
  ```
 Controller controller = Get.put(Controller()); // Rather Controller controller = Controller();
  ```
-## ⚡Bindings
+## ⚡ Bindings
 Bindings are classes where we can declare our dependencies and then ‘bind’ them to the routes. However, this means that we can only use it when using GetX for route management.
 
 1. start by creating a class that implements Bindings class.
@@ -143,6 +143,7 @@ Bindings are classes where we can declare our dependencies and then ‘bind’ t
  ```
  class HomeBinding implements Bindings {}
  ```
+
 2. need to override the dependencies() method, where we’ll insert all our dependencies.
 
  ```
