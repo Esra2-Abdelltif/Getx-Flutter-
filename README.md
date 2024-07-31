@@ -228,7 +228,7 @@ class CountController extends GetxController {
 
 - onClose() : is equivalent the dispose() in Stateful.
 
-## ⚡GetPage Middleware
+## ⚡ GetPage Middleware
 The GetPage has now new property that takes a list of GetMiddleWare and run them in the specific order.
 Note: When GetPage has a Middlewares, all the children of this page will have the same middlewares automatically.
  ```
@@ -248,3 +248,61 @@ class MiddlewareClass extends GetMiddleware{
 
   }
 }
+ ```
+## ⚡ GetView
+Is a const Stateless Widget that has a getter controller for a registered Controller, that's all.
+ ```
+class AwesomeController extends GetController {
+   final String title = 'My Awesome View';
+ }
+
+  // ALWAYS remember to pass the `Type` you used to register your controller!
+ class AwesomeView extends GetView<AwesomeController> {
+   @override
+   Widget build(BuildContext context) {
+     return Container(
+       padding: EdgeInsets.all(20),
+       child: Text(controller.title), // just call `controller.something`
+     );
+   }
+ }
+```
+## ⚡ GetxService
+This class is like a GetxController, it shares the same lifecycle ( onInit(), onReady(), onClose()). But has no "logic" inside of it. It just notifies GetX Dependency Injection system, that this subclass can not be removed from memory.
+So is super useful to keep your "Services" always reachable and active with Get.find().
+ ```
+Future<void> main() async {
+  await initServices(); /// AWAIT SERVICES INITIALIZATION.
+  runApp(SomeApp());
+}
+
+/// Is a smart move to make your Services intiialize before you run the Flutter app.
+/// as you can control the execution flow (maybe you need to load some Theme configuration,
+/// apiKey, language defined by the User... so load SettingService before running ApiService.
+/// so GetMaterialApp() doesnt have to rebuild, and takes the values directly.
+void initServices() async {
+  print('starting services ...');
+  /// Here is where you put get_storage, hive, shared_pref initialization.
+  /// or moor connection, or whatever that's async.
+  await Get.putAsync(SettingsService()).init();
+  print('All services started...');
+}
+
+class SettingsService extends GetxService {
+  void init() async {
+    print('$runtimeType delays 1 sec');
+    await 1.delay();
+    print('$runtimeType ready!');
+  }
+}
+```
+
+
+
+
+
+
+
+
+
+
