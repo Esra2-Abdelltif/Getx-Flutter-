@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:get/get.dart';
+import 'package:getx/local/local.dart';
+import 'package:getx/local/local_controller.dart';
 import 'package:getx/middleware/auth_middleware.dart';
 import 'package:getx/middleware/super_middleware.dart';
 import 'package:getx/services/setting_service.dart';
@@ -35,8 +37,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    MyLocalController controller=Get.put(MyLocalController());
     return GetMaterialApp(
-      locale: DevicePreview.locale(context),
+      //لغه الجهاز
+      // locale: Get.deviceLocale,
+      locale: controller.initialLang,
+      translations: MyLocal(),
       builder: DevicePreview.appBuilder,
       title: 'Flutter Demo',
       theme: ThemeData(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx/controller/counter_controller/get_builder_counter_controller.dart';
 import 'package:getx/utils/my_bindings.dart';
 import 'package:getx/view/screens/counter_screen/get_builder_counter_screen.dart';
 import 'package:getx/view/widget/custom_button.dart';
