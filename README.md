@@ -338,7 +338,10 @@ return GetMaterialApp(
     locale: Get.deviceLocale,
 );
  ```
-
+## ⚡ Change Theme  
+ ```
+Get.changeTheme(Get.isDarkMode? ThemeData.light(): ThemeData.dark());
+ ```
 ## ⚡Dialog Getx
     ```
     Get.defaultDialog();
