@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx/utils/my_bindings.dart';
 import 'package:getx/view/screens/counter_screen/get_builder_counter_screen.dart';
+import 'package:getx/view/widget/bottom_sheet.dart';
 import 'package:getx/view/widget/custom_button.dart';
 import 'package:getx/view/widget/show_dialog.dart';
 import 'package:getx/view/widget/snack_bar.dart';
@@ -69,7 +70,9 @@ class NextScreen extends StatelessWidget {
           children: [
             ShowDialog(),
             SizedBox(height: 20,),
-            SnackBarWidget()
+            SnackBarWidget(),
+            SizedBox(height: 20,),
+            BottomSheetWidget()
        ],),
       )
     );
