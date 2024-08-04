@@ -351,10 +351,10 @@ return GetMaterialApp(
     ```
     Get.bottomSheet(Widget ());
     ```  
- ## ⚡Get.arguments
-    give the current args from currentScreen
-    ```
-    Get.toNamed("/screen",arguments:{ "name":"Esraa"   } );
+ ## ⚡Get.arguments  
+   give the current args from currentScreen
+   ```
+      Get.toNamed("/screen",arguments:{ "name":"Esraa"   } );
     
     //Controller
     class ArgumentsController extends GetxController{
@@ -365,6 +365,7 @@ return GetMaterialApp(
     super.onInit();
     }
     }
+
   ```  
 
 
