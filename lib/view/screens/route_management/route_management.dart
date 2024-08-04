@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:getx/utils/my_bindings.dart';
 import 'package:getx/view/screens/counter_screen/get_builder_counter_screen.dart';
 import 'package:getx/view/widget/custom_button.dart';
+import 'package:getx/view/widget/show_dialog.dart';
 
 class RouteManagement extends StatelessWidget {
    RouteManagement({super.key});
@@ -60,17 +61,12 @@ class NextScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body:Padding(
-        padding: const EdgeInsets.all(20.0),
+      body:const Padding(
+        padding: EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-          CustomButton(
-            text: "NextScreen",
-            onTap: () {
-              Get.to(const NextScreenTwo());
-            },
-          ),
+            ShowDialog(),
         ],),
       )
     );
