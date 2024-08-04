@@ -4,6 +4,7 @@ import 'package:getx/local/local_controller.dart';
 import 'package:getx/main.dart';
 import 'package:getx/services/setting_service.dart';
 import 'package:getx/view/screens/home_screen/argrument_screen.dart';
+import 'package:getx/view/widget/change_themes.dart';
 import 'package:getx/view/widget/custom_button.dart';
 
 class LoginScreen extends GetView<SettingService> {
@@ -23,6 +24,8 @@ class LoginScreen extends GetView<SettingService> {
           mainAxisAlignment: MainAxisAlignment.center,
 
           children: [
+            const ChangeThemes(),
+            const SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -50,8 +53,6 @@ class LoginScreen extends GetView<SettingService> {
                 ),
               ],
             ),
-
-
             const SizedBox(height: 20,),
             GetX<SettingService>(
                 builder: (controller){

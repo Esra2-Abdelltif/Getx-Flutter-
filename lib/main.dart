@@ -46,10 +46,7 @@ class MyApp extends StatelessWidget {
       translations: MyLocal(),
       builder: DevicePreview.appBuilder,
       title: 'Flutter Demo',
-      theme: ThemeData(
-       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: ThemeData.light(),
       // home:   RouteManagement(),
       ///To call Binding
       // initialBinding: MyBindings(),
