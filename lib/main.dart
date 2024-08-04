@@ -7,6 +7,7 @@ import 'package:getx/middleware/auth_middleware.dart';
 import 'package:getx/middleware/super_middleware.dart';
 import 'package:getx/services/setting_service.dart';
 import 'package:getx/view/screens/home_screen/admin_screen.dart';
+import 'package:getx/view/screens/home_screen/argrument_screen.dart';
 import 'package:getx/view/screens/home_screen/home_screen.dart';
 import 'package:getx/view/screens/home_screen/super_screen.dart';
 import 'package:getx/view/screens/route_management/route_management.dart';
@@ -61,6 +62,8 @@ class MyApp extends StatelessWidget {
         ///To call Binding
         // GetPage(name: "/Next2Screen",page:()=>const NextScreenTwo(),binding: MyBindings() ),
     GetPage(name: "/NextScreen",page:()=>const NextScreen() ),
+        GetPage(name: "/ArgumentsScreen",page:()=>const ArgumentsScreen() ),
+
 
       ],
     );

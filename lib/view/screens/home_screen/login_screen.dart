@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:getx/local/local_controller.dart';
 import 'package:getx/main.dart';
 import 'package:getx/services/setting_service.dart';
+import 'package:getx/view/screens/home_screen/argrument_screen.dart';
 import 'package:getx/view/widget/custom_button.dart';
 
 class LoginScreen extends GetView<SettingService> {
@@ -72,8 +73,17 @@ class LoginScreen extends GetView<SettingService> {
                       ],
                     ),
                   );
-                })
-            ,
+                }),
+            const SizedBox(height: 20,),
+            CustomButton(
+              text: "Arguments Screen",
+              onTap: () {
+                Get.toNamed("/ArgumentsScreen",arguments:{
+                  "name":"Esraa"
+                } );
+
+              },
+            ),
             const SizedBox(height: 20,),
             CustomButton(
               text: "Admin",
