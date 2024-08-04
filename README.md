@@ -296,11 +296,48 @@ class SettingsService extends GetxService {
   }
 }
 ```
-
-
-
-
-
+## ⚡ Translations 
+Translations are kept as a simple key-value dictionary map. To add custom translations, create a class and extend Translations.
+ ```
+  import 'package:get/get.dart';
+class Messages extends Translations {
+  @override
+  Map<String, Map<String, String>> get keys => {
+        'en_US': {
+          'hello': 'Hello World',
+        },
+        'de_DE': {
+          'hello': 'Hallo Welt',
+        }
+      };
+}
+ ```
+1. Using translations
+ ```
+Using translations
+ ```
+2.Locales
+Pass parameters to GetMaterialApp to define the locale and translations.
+ ```
+return GetMaterialApp(
+    translations: Messages(), // your translations
+    locale: Locale('en', 'US'), // translations will be displayed in that locale
+    fallbackLocale: Locale('en', 'UK'), // specify the fallback locale in case an invalid locale is selected.
+);
+ ```
+3. Change locale
+Call Get.updateLocale(locale) to update the locale. Translations then automatically use the new local
+ ```
+var locale = Locale('en', 'US');
+Get.updateLocale(locale);
+ ```
+4. System locale
+To read the system locale, you could use Get.deviceLocale.
+ ```
+return GetMaterialApp(
+    locale: Get.deviceLocale,
+);
+ ```
 
 
 
