@@ -339,7 +339,34 @@ return GetMaterialApp(
 );
  ```
 
+## ⚡Dialog Getx
+    ```
+    Get.defaultDialog();
+    ```
+## ⚡Dialog Getx
+    ```
+    Get.snackbar(title, message);
+    ```  
+## ⚡BottomSheet
+    ```
+    Get.bottomSheet(Widget ());
+    ```  
+ ## ⚡Get.arguments  
+   give the current args from currentScreen
+   ```
+      Get.toNamed("/screen",arguments:{ "name":"Esraa"   } );
+    
+    //Controller
+    class ArgumentsController extends GetxController{
+    String? name;
+    @override
+    void onInit(){
+    name=Get.arguments["name"];
+    super.onInit();
+    }
+    }
 
+  ```  
 
 
 
