@@ -4,6 +4,7 @@ import 'package:getx/utils/my_bindings.dart';
 import 'package:getx/view/screens/counter_screen/get_builder_counter_screen.dart';
 import 'package:getx/view/widget/custom_button.dart';
 import 'package:getx/view/widget/show_dialog.dart';
+import 'package:getx/view/widget/snack_bar.dart';
 
 class RouteManagement extends StatelessWidget {
    RouteManagement({super.key});
@@ -67,7 +68,9 @@ class NextScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ShowDialog(),
-        ],),
+            SizedBox(height: 20,),
+            SnackBarWidget()
+       ],),
       )
     );
   }
