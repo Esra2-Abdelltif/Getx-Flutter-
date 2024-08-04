@@ -78,9 +78,9 @@ class LoginScreen extends GetView<SettingService> {
             CustomButton(
               text: "Arguments Screen",
               onTap: () {
-                Get.toNamed("/ArgumentsScreen",arguments:{
-                  "name":"Esraa"
-                } );
+                Get.toNamed("/ArgumentsScreen",arguments:
+                  {'name': 'esraa'}
+                );
 
               },
             ),

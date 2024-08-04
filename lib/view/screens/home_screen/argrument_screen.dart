@@ -8,11 +8,13 @@ class ArgumentsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ArgumentsController contoller= Get.put(ArgumentsController());
-    return Scaffold(
+    var contoller= Get.put(ArgumentsController());
+    return Scaffold
+      (
+      appBar: AppBar(),
       body: Column(
         children: [
-          Center(child: Text("${contoller.name}"))
+           Center(child: Text("${contoller.name}"))
         ],
 
       ),
